@@ -41,7 +41,7 @@ const Layout = () => {
         <div className="container">
           <div className="header-content">
             <Link to="/" className="logo">
-              <h1>뉴스 사이트</h1>
+              <h1>도로롱의 뉴스타파</h1>
             </Link>
 
             <nav className="nav">
@@ -98,7 +98,7 @@ const Layout = () => {
 
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2024 뉴스 사이트. All rights reserved.</p>
+          <p>&copy; 2026 도로롱의 뉴스타파. All rights reserved.</p>
         </div>
       </footer>
     </div>
