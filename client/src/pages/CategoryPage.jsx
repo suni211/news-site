@@ -15,7 +15,7 @@ const CategoryPage = () => {
   const fetchArticles = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/articles?category=${id}`);
+      const response = await axios.get(`/api/articles?category=${id}`);
       setArticles(response.data.articles);
 
       if (response.data.articles.length > 0) {

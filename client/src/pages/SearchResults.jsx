@@ -17,7 +17,7 @@ const SearchResults = () => {
   const fetchResults = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/search?q=${encodeURIComponent(query)}`);
+      const response = await axios.get(`/api/search?q=${encodeURIComponent(query)}`);
       setArticles(response.data.results);
     } catch (error) {
       console.error('검색 실패:', error);

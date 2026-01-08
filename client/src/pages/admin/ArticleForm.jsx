@@ -39,7 +39,7 @@ const ArticleForm = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/categories');
+      const response = await axios.get('/api/categories');
       setCategories(response.data);
     } catch (error) {
       console.error('카테고리 조회 실패:', error);
@@ -48,7 +48,7 @@ const ArticleForm = () => {
 
   const fetchArticle = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/articles/${id}`);
+      const response = await axios.get(`/api/articles/${id}`);
       const article = response.data;
 
       setFormData({
@@ -87,10 +87,10 @@ const ArticleForm = () => {
       };
 
       if (isEdit) {
-        await axios.put(`http://localhost:5000/api/articles/${id}`, data);
+        await axios.put(`/api/articles/${id}`, data);
         alert('기사가 수정되었습니다');
       } else {
-        await axios.post('http://localhost:5000/api/articles', data);
+        await axios.post('/api/articles', data);
         alert('기사가 작성되었습니다');
       }
 

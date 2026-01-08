@@ -16,7 +16,7 @@ const Home = () => {
   const fetchArticles = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/articles?page=${page}&limit=10`);
+      const response = await axios.get(`/api/articles?page=${page}&limit=10`);
       setArticles(response.data.articles);
       setTotalPages(response.data.pagination.totalPages);
     } catch (error) {

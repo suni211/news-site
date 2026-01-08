@@ -19,7 +19,7 @@ const ArticleDetail = () => {
 
   const fetchArticle = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/articles/${id}`);
+      const response = await axios.get(`/api/articles/${id}`);
       setArticle(response.data);
     } catch (error) {
       console.error('기사 조회 실패:', error);
@@ -30,7 +30,7 @@ const ArticleDetail = () => {
 
   const fetchComments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/articles/${id}/comments`);
+      const response = await axios.get(`/api/articles/${id}/comments`);
       setComments(response.data);
     } catch (error) {
       console.error('댓글 조회 실패:', error);
@@ -46,7 +46,7 @@ const ArticleDetail = () => {
     }
 
     try {
-      await axios.post(`http://localhost:5000/api/articles/${id}/comments`, {
+      await axios.post(`/api/articles/${id}/comments`, {
         content: commentContent
       });
 
@@ -62,7 +62,7 @@ const ArticleDetail = () => {
     if (!confirm('댓글을 삭제하시겠습니까?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/comments/${commentId}`);
+      await axios.delete(`/api/comments/${commentId}`);
       fetchComments();
     } catch (error) {
       console.error('댓글 삭제 실패:', error);

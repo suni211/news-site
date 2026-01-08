@@ -21,7 +21,7 @@ const Dashboard = () => {
 
   const fetchArticles = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/articles?limit=100');
+      const response = await axios.get('/api/articles?limit=100');
       setArticles(response.data.articles);
     } catch (error) {
       console.error('기사 조회 실패:', error);
@@ -34,7 +34,7 @@ const Dashboard = () => {
     if (!confirm('정말 삭제하시겠습니까?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/articles/${id}`);
+      await axios.delete(`/api/articles/${id}`);
       fetchArticles();
       alert('기사가 삭제되었습니다');
     } catch (error) {
